@@ -3,8 +3,8 @@ import { FormsModule } from "futureforms";
 
 export class FutureForm extends Component
 {
-   loaded = false;
-   pars = new Map();
+   fform = null;
+   ffpars = new Map();
 
    constructor(props)
    {
@@ -13,26 +13,37 @@ export class FutureForm extends Component
       for(var key in props)
       {
          if (key !== "form")
-            this.pars.set(key,props[key]);
+            this.ffpars.set(key,props[key]);
       }
+   }
+
+   executeQuery()
+   {
+      this.fform.executeQuery();
    }
 
    render()
    {
-      return(<div form={this.props.form}></div>);
+      return(
+         <div>
+            <button onClick={() => this.executeQuery()}>React query</button>
+            <div form={this.props.form}></div>
+         </div>
+      );
    }
 
+   loaded = false;
    async componentDidMount()
    {
       if (!this.loaded)
       {
          this.loaded = true;
-         await FormsModule.showform(this.props.form,this.pars,this.findroot());
+         this.fform = await FormsModule.showform(this.props.form,this.ffpars,this.findroot());
       }
    }
 
    findroot()
    {
-      return(document.querySelector("[form='"+this.name+"']"));
+      return(document.querySelector("[form='"+this.props.form+"']"));
    }
 }

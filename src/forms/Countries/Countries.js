@@ -16,9 +16,9 @@ export class Countries extends BaseForm
       super(page);
       this.setDataSource(COUNTRIES,new CountryDS());
 
-      this.addEventListener(this.test);
-      this.addEventListener(this.init,{type: EventType.PostViewInit});
-      this.addEventListener(this.preQuery,{type: EventType.PreQuery});
+      //this.addEventListener(this.test);
+      //this.addEventListener(this.init,{type: EventType.PostViewInit});
+      //this.addEventListener(this.preQuery,{type: EventType.PreQuery});
    }
 
    async init()
