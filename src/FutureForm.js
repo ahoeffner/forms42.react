@@ -3,24 +3,23 @@ import { FormsModule } from "futureforms";
 
 export class FutureForm extends Component
 {
-   name = null;
    loaded = false;
    pars = new Map();
 
    constructor(props)
    {
       super(props);
-      this.name = props.form;
+
       for(var key in props)
       {
-         if (key != "form")
+         if (key !== "form")
             this.pars.set(key,props[key]);
       }
    }
 
    render()
    {
-      return(<div form={this.name}></div>);
+      return(<div form={this.props.form}></div>);
    }
 
    async componentDidMount()
@@ -28,7 +27,7 @@ export class FutureForm extends Component
       if (!this.loaded)
       {
          this.loaded = true;
-         await FormsModule.showform(this.name,this.pars,this.findroot());
+         await FormsModule.showform(this.props.form,this.pars,this.findroot());
       }
    }
 
