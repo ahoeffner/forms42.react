@@ -4,6 +4,7 @@ import { FormsModule } from "futureforms";
 export class FutureForm extends Component
 {
    fform = null;
+	ffelem = null;
    ffpars = new Map();
 
    constructor(props)
@@ -26,8 +27,8 @@ export class FutureForm extends Component
    {
       return(
          <div>
-            <button onClick={() => this.executeQuery()}>React query</button>
-            <div form={this.props.form}></div>
+            <div style={{position: "relative"}} form={this.props.form}></div>
+            <button style={{marginLeft: "100px", marginTop: "16px"}} onClick={() => this.executeQuery()}>React query</button>
          </div>
       );
    }
@@ -38,11 +39,16 @@ export class FutureForm extends Component
       if (!this.loaded)
       {
          this.loaded = true;
-         this.fform = await FormsModule.showform(this.props.form,this.ffpars,this.findroot());
+			this.ffelem = this.formelement();
+
+         this.fform = await FormsModule.showform(this.props.form,this.ffpars,this.ffelem);
+
+			this.ffelem.style.width = this.fform.getView().offsetWidth+"px";
+			this.ffelem.style.height = this.fform.getView().offsetHeight+"px";
       }
    }
 
-   findroot()
+   formelement()
    {
       return(document.querySelector("[form='"+this.props.form+"']"));
    }

@@ -1,8 +1,8 @@
 export const page =
 
-<form style={{margin: 50 + "px"}}>
-	<button style={{marginBottom: 20 + "px"}} type="button" ffe-onclick="this.enterQuery()">Enter Query</button>
-	<button style={{marginBottom: 20 + "px"}} type="button" ffe-onclick="this.executeQuery()">Execute Query</button>
+<form style={{marginLeft: "50px", marginTop: "50px"}}>
+	<button style={{marginBottom: 20 + "px"}} type="button" ff-onclick="this.enterQuery()">Enter Query</button>
+	<button style={{marginBottom: 20 + "px"}} type="button" ff-onclick="this.executeQuery()">Execute Query</button>
 	<table>
 		<thead>
 			<tr>

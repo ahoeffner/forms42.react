@@ -17,7 +17,7 @@ export class FormsModule extends BaseModule
       super();
 
       // Allow form events to bypass React
-      FormProperties.AttributePrefix = "ffe-";
+      FormProperties.AttributePrefix = "ff-";
 
       // Typically setup for internet apps
       FormsModule.defaultFlushStrategy = FlushStrategy.Row;
