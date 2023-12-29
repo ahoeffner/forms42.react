@@ -14,8 +14,8 @@ export const page =
 		<tbody>
 			<tr foreach="row in 1..5">
 				<td from="CountryDS" row="$row" type="row-indicator" className="indicator"></td>
-				<td><input name="country_id" from="CountryDS" row="$row" size="4" maxLength="3" upper="true" required autoComplete="off"></input></td>
-				<td><input name="country_name" from="CountryDS" row="$row" initcap="true" required advquery="false" autoComplete="off"></input></td>
+				<td><input name="country_id" from="CountryDS" row="$row" size="4" maxLength="3" upper="true" required autoComplete="off" lov="countrylist"></input></td>
+				<td><input name="country_name" from="CountryDS" row="$row" initcap="true" required advquery="false" autoComplete="off" lov="countrylist"></input></td>
 			</tr>
 		</tbody>
 	</table>

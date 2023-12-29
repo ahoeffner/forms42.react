@@ -26,10 +26,10 @@ export class FutureForm extends Component
    render()
    {
       return(
-         <div>
-            <div style={{position: "relative"}} form={this.props.form}></div>
+         <>
+            <div form={this.props.form}></div>
             <button style={{marginLeft: "100px", marginTop: "16px"}} onClick={() => this.executeQuery()}>React query</button>
-         </div>
+         </>
       );
    }
 
@@ -40,11 +40,7 @@ export class FutureForm extends Component
       {
          this.loaded = true;
 			this.ffelem = this.formelement();
-
          this.fform = await FormsModule.showform(this.props.form,this.ffpars,this.ffelem);
-
-			this.ffelem.style.width = this.fform.getView().offsetWidth+"px";
-			this.ffelem.style.height = this.fform.getView().offsetHeight+"px";
       }
    }
 

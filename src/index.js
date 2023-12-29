@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { FormsModule } from './forms/FormsModule';
 
-FormsModule.init();
+new FormsModule();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

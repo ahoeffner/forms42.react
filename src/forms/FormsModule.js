@@ -1,16 +1,11 @@
 import { Countries } from "./Countries/Countries";
+import { Countries as CountryList } from "../listofvalues/Countries";
 import { FormsModule as BaseModule, ConnectionScope, DatabaseConnection, FlushStrategy, FormProperties, KeyMap } from "futureforms";
 
 
 export class FormsModule extends BaseModule
 {
-   static instance = null;
    static DATABASE = new DatabaseConnection("http://localhost:9002");
-
-   static init()
-   {
-      FormsModule.instance = new FormsModule();
-   }
 
    constructor()
    {
@@ -31,5 +26,6 @@ export class FormsModule extends BaseModule
 
       // Map components
       FormsModule.mapComponent(Countries,"countries");
+      FormsModule.mapComponent(CountryList,"countrylist");
    }
 }
