@@ -3,7 +3,7 @@ import { FutureForm } from './FutureForm';
 
 function App() {
   return (
-    <div>
+    <div class="page">
       <FutureForm form="countries" country=""></FutureForm>
     </div>
   );
