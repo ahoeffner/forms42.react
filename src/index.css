@@ -20,27 +20,13 @@ code {
   width: 100%;
 }
 
-.page
-{
-  height: 100%;
-  display:grid;
-  align-self: center;
-  justify-self: center;
-}
-
-.page div
-{
-  display:block;
-  margin:0 auto;
-}
-
 .canvas
 {
   border:solid 1px black;
   background-color: white;
 }
 
-.canvas-handle 
+.canvas-handle
 {
   border-bottom: solid black 1px;
 }
@@ -60,7 +46,7 @@ div[name="close-button"]
   position: relative;
 	border-radius: 50px;
 	background-color: gray;
-  
+
 }
 
 .indicator
