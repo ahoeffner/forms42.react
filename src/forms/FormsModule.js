@@ -1,6 +1,6 @@
 import { Countries } from "./Countries/Countries";
 import { Countries as CountryList } from "../listofvalues/Countries";
-import { FormsModule as BaseModule, ConnectionScope, DatabaseConnection, FlushStrategy, FormProperties, KeyMap } from "futureforms";
+import { FormsModule as BaseModule, InternalFormsConfig, ConnectionScope, DatabaseConnection, FlushStrategy, FormProperties, KeyMap } from "futureforms";
 
 
 export class FormsModule extends BaseModule
@@ -10,6 +10,9 @@ export class FormsModule extends BaseModule
    constructor()
    {
       super();
+
+		// Close button for internal forms
+		InternalFormsConfig.CloseButtonText = "&#215;";
 
       // Allow form events to bypass React
       FormProperties.AttributePrefix = "ff-";
