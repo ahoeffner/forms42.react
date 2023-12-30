@@ -52,7 +52,7 @@ div[name="lov"] > div[name="search"] > input
 
 div[name="lov"] > div[name="results"] > div[name="row"] > input
 {
-	border: none;
 	margin: 4px;
+	border: none;
 	border-bottom: 1px solid black;
 }
