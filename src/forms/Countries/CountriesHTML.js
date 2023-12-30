@@ -1,10 +1,15 @@
 export const page =
 
-<form style={{marginLeft: "50px", marginTop: "50px"}}>
-	<button style={{marginBottom: 20 + "px"}} type="button" ff-onclick="this.enterQuery()">Enter Query</button>
-	<button style={{marginBottom: 20 + "px"}} type="button" ff-onclick="this.executeQuery()">Execute Query</button>
+<form style={{marginLeft: "20px", marginTop: "20px"}}>
 	<table>
 		<thead>
+			<tr style={{height: "100px"}}>
+				<td></td>
+				<td colSpan={2}>
+					<button type="button" ff-onclick="this.enterQuery()">Enter Query</button>
+					<button type="button" ff-onclick="this.executeQuery()">Execute Query</button>
+				</td>
+			</tr>
 			<tr>
 				<th></th>
 				<th>Code</th>
