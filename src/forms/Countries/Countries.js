@@ -16,9 +16,11 @@ export class Countries extends BaseForm
       super(page);
       this.setDataSource(COUNTRIES,new CountryDS());
 
-      //this.addEventListener(this.test);
+      this.addEventListener(this.events);
       //this.addEventListener(this.init,{type: EventType.PostViewInit});
       //this.addEventListener(this.preQuery,{type: EventType.PreQuery});
+		//this.addEventListener(this.allowInput,{type: EventType.OnRecord});
+		//this.addEventListener(this.disAllowInput,{type: EventType.PostRecord});
    }
 
    async init()
@@ -41,7 +43,21 @@ export class Countries extends BaseForm
       return(true);
    }
 
-   async test(event)
+	allowInput()
+	{
+		let record = this.getBlock("CountryDS").getRecord();
+		if (record.inserted) record.setTag("country_name","input");
+		return(true);
+	}
+
+	disAllowInput()
+	{
+		let record = this.getBlock("CountryDS").getRecord();
+		record.clearProperties();
+		return(true);
+	}
+
+   async events(event)
    {
       console.log(EventType[event.type]);
       return(true);
