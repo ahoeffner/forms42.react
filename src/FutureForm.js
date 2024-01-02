@@ -10,6 +10,7 @@ export class FutureForm extends Component
    constructor(props)
    {
       super(props);
+		this.ffpars.set("react",this);
 
       for(var key in props)
       {
@@ -17,6 +18,11 @@ export class FutureForm extends Component
             this.ffpars.set(key,props[key]);
       }
    }
+
+	someMethod(msg)
+	{
+		alert(msg);
+	}
 
    executeQuery()
    {
@@ -28,7 +34,7 @@ export class FutureForm extends Component
       return(
          <>
             <div form={this.props.form}></div>
-            <button style={{marginLeft: "100px", marginTop: "16px"}} onClick={() => this.executeQuery()}>React query</button>
+            <button style={{marginLeft: "100px", marginTop: "16px"}} onClick={() => this.executeQuery()}>Query</button>
          </>
       );
    }

@@ -14,6 +14,7 @@ export class FormsModule extends BaseModule
 
 		Messages.language = "SE";
 		Messages.addBundle(AppMessages);
+		Messages.MessageHandler = this;
 
 		// Close button for internal forms
 		InternalFormsConfig.CloseButtonText = "&#215;";
@@ -35,4 +36,11 @@ export class FormsModule extends BaseModule
       FormsModule.mapComponent(Countries,"countries");
       FormsModule.mapComponent(CountryList,"countrylist");
    }
+
+
+	handle(group, msg, level)
+	{
+		alert(msg.message);
+		return(true);
+	}
 }

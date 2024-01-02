@@ -4,7 +4,6 @@ import { BaseForm } from "../BaseForm";
 import { CountryDS } from "./CountriesDS";
 import { Equals, EventType, Messages } from "futureforms";
 
-
 const PARAM = "country";
 const COUNTRIES = "CountryDS";
 const SHORTNAME = "country_id";
@@ -23,6 +22,11 @@ export class Countries extends BaseForm
 		//this.addEventListener(this.disAllowInput,{type: EventType.PostRecord});
       //this.addEventListener(this.validateCountryID,{type: EventType.WhenValidateField, block: COUNTRIES, field: SHORTNAME});
    }
+
+	callReact()
+	{
+		this.parameters.get("react").someMethod("Hello");
+	}
 
    async init()
    {
