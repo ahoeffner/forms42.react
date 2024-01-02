@@ -18,6 +18,7 @@ export class Countries extends BaseForm
       //this.addEventListener(this.events);
       //this.addEventListener(this.init,{type: EventType.PostViewInit});
       //this.addEventListener(this.preQuery,{type: EventType.PreQuery});
+      //this.addEventListener(this.setCreated,{type: EventType.OnFetch});
 		//this.addEventListener(this.allowInput,{type: EventType.OnNewRecord});
 		//this.addEventListener(this.disAllowInput,{type: EventType.PostRecord});
       //this.addEventListener(this.validateCountryID,{type: EventType.WhenValidateField, block: COUNTRIES, field: SHORTNAME});
@@ -79,6 +80,12 @@ export class Countries extends BaseForm
       super.executeQuery(COUNTRIES);
       return(true);
    }
+
+	setCreated()
+	{
+		this.setValue(COUNTRIES,"created",new Date());
+		return(true);
+	}
 
 	validateCountryID()
 	{
