@@ -1,6 +1,7 @@
-import { Countries } from "./Countries/Countries";
-import { Countries as CountryList } from "../listofvalues/Countries";
-import { FormsModule as BaseModule, InternalFormsConfig, ConnectionScope, DatabaseConnection, FlushStrategy, FormProperties, KeyMap } from "futureforms";
+import { AppMessages } from "./AppMessages";
+import { Countries } from "./forms/Countries/Countries";
+import { Countries as CountryList } from "./listofvalues/Countries";
+import { FormsModule as BaseModule, InternalFormsConfig, ConnectionScope, DatabaseConnection, FlushStrategy, FormProperties, KeyMap, Messages } from "futureforms";
 
 
 export class FormsModule extends BaseModule
@@ -10,6 +11,9 @@ export class FormsModule extends BaseModule
    constructor()
    {
       super();
+
+		Messages.language = "SE";
+		Messages.addBundle(AppMessages);
 
 		// Close button for internal forms
 		InternalFormsConfig.CloseButtonText = "&#215;";

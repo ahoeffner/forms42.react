@@ -1,5 +1,5 @@
 import { DatabaseTable } from "futureforms";
-import { FormsModule } from "../FormsModule";
+import { FormsModule } from "../../FormsModule";
 
 export class CountryDS extends DatabaseTable
 {
