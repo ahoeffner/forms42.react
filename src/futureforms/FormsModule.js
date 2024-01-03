@@ -17,7 +17,9 @@ export class FormsModule extends BaseModule
 		Messages.MessageHandler = this;
 
 		// Close button for internal forms
+		InternalFormsConfig.OKButtonText = "Ok";
 		InternalFormsConfig.CloseButtonText = "&#215;";
+		InternalFormsConfig.CancelButtonText = "Cancel";
 
       // Allow form events to bypass React
       FormProperties.AttributePrefix = "ff-";
