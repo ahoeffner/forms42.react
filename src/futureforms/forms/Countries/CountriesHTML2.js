@@ -7,10 +7,10 @@ export const page =
             <tr>
               <th></th>
               <th>
-                <label className="above" htmlFor="cou-cid-0-0" tabIndex="0" ff-onclick="this.sort(countries,country_id)" draggable="true" ff-ondragstart="this.startFieldDragging()">Country Id</label>
+                <label className="above" htmlFor="cou-cid-0-0" tabIndex="0" ff-onclick="this.sort(countries,country_id)" draggable="true" ff-ondragstart="this.startFieldDragging()">Id</label>
               </th>
               <th>
-                <label className="above" htmlFor="cou-cn-0-0" tabIndex="0" ff-onclick="this.sort(countries,country_name)" draggable="true" ff-ondragstart="this.startFieldDragging()">Country Name</label>
+                <label className="above" htmlFor="cou-cn-0-0" tabIndex="0" ff-onclick="this.sort(countries,country_name)" draggable="true" ff-ondragstart="this.startFieldDragging()">Name</label>
               </th>
             </tr>
           </thead>

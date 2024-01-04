@@ -1,5 +1,5 @@
 import './index.css';
-//import './styles.css';
+import './styles.css';
 import './fieldset.css';
 
 import App from './App';

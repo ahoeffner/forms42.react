@@ -16,7 +16,7 @@ export class Countries extends BaseForm
       this.setDataSource(COUNTRIES,new CountryDS());
 
       //this.addEventListener(this.events);
-      //this.addEventListener(this.init,{type: EventType.PostViewInit});
+      this.addEventListener(this.init,{type: EventType.PostViewInit});
       //this.addEventListener(this.preQuery,{type: EventType.PreQuery});
       //this.addEventListener(this.setCreated,{type: EventType.OnFetch});
 		//this.addEventListener(this.allowInput,{type: EventType.OnNewRecord});
@@ -33,6 +33,7 @@ export class Countries extends BaseForm
    {
       let country = this.parameters.get(PARAM);
       if (country) setTimeout(() => {this.executeQuery()},100); // Wait until connected
+		console.log(this.getView())
       return(true);
    }
 
