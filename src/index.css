@@ -24,17 +24,17 @@ body,html {
 }
 
 /* Row-indicator */
-[type="row-indicator"]
+td[type="row-indicator"]
 {
 	width: 10px;
 	align-items: center;
 	justify-content: center;
 }
 
-[type="row-indicator"]:not([state="na"]).active
+td[type="row-indicator"]:not([state="na"]).active
 {
-	top: 7px;
-	right: 5px;
+	left:0px;
+	top: 10px;
 	width: 5px;
 	height: 5px;
 	display: block;
