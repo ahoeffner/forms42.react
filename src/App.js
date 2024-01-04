@@ -4,7 +4,7 @@ import { FutureForm } from './FutureForm';
 function App() {
   return (
     <div>
-      <FutureForm form="countries" country=""></FutureForm>
+      <FutureForm form="countries" country="DK"></FutureForm>
     </div>
   );
 }

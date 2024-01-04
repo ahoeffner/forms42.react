@@ -16,8 +16,7 @@ export class Countries extends BaseForm
       this.setDataSource(COUNTRIES,new CountryDS());
 
       //this.addEventListener(this.events);
-      this.addEventListener(this.init,{type: EventType.PostViewInit});
-      //this.addEventListener(this.preQuery,{type: EventType.PreQuery});
+      this.addEventListener(this.preQuery,{type: EventType.PreQuery});
       //this.addEventListener(this.setCreated,{type: EventType.OnFetch});
 		//this.addEventListener(this.allowInput,{type: EventType.OnNewRecord});
 		//this.addEventListener(this.disAllowInput,{type: EventType.PostRecord});
@@ -29,11 +28,10 @@ export class Countries extends BaseForm
 		this.parameters.get("react").someMethod("Hello");
 	}
 
-   async init()
+   async showCurrentCountry()
    {
-      let country = this.parameters.get(PARAM);
-      if (country) setTimeout(() => {this.executeQuery()},100); // Wait until connected
-		console.log(this.getView())
+		let country = this.parameters.get(PARAM);
+		if (country) await this.executeQuery();
       return(true);
    }
 
@@ -43,6 +41,7 @@ export class Countries extends BaseForm
 
       if (country)
       {
+			this.parameters.delete(PARAM);
          let filter = new Equals(SHORTNAME);
          this.getBlock(COUNTRIES).filter.and(filter.setConstraint(country));
       }

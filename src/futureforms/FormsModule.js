@@ -28,9 +28,6 @@ export class FormsModule extends BaseModule
       FormsModule.defaultFlushStrategy = FlushStrategy.Row;
       FormsModule.DATABASE.scope = ConnectionScope.stateless;
 
-      // Connect to database
-      FormsModule.DATABASE.connect("hr","hr");
-
       // Show default key-mapping
       KeyMap.list().forEach((map) => console.log(map[0]+" "+map[1]))
 
@@ -40,9 +37,21 @@ export class FormsModule extends BaseModule
    }
 
 
-	handle(group, msg, level)
+	async connect()
 	{
-		alert(msg.message);
+		await FormsModule.DATABASE.connect("hr","hr");
+
+		setTimeout(() =>
+		{
+			FormsModule.getCurrentForm()?.showCurrentCountry();
+		},10);
+	}
+
+
+	handle(msg, _level)
+	{
+		//alert(msg.message);
+		console.log(msg.message)
 		return(true);
 	}
 }
