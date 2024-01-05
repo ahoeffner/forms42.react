@@ -1,4 +1,4 @@
-import { page } from "./CountriesHTML2"
+import { page } from "./CountriesHTML"
 
 import { BaseForm } from "../BaseForm";
 import { CountryDS } from "./CountriesDS";
