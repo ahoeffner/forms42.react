@@ -2,7 +2,7 @@ import { page } from "./CountriesHTML"
 
 import { BaseForm } from "../BaseForm";
 import { CountryDS } from "./CountriesDS";
-import { Equals, EventType, Messages } from "futureforms";
+import { Equals, EventType, Messages, TableSorter } from "futureforms";
 
 const PARAM = "country";
 const COUNTRIES = "CountryDS";
@@ -10,9 +10,12 @@ const SHORTNAME = "country_id";
 
 export class Countries extends BaseForm
 {
+	sorter;
+
    constructor()
    {
       super(page);
+		this.sorter = new TableSorter(this);
       this.setDataSource(COUNTRIES,new CountryDS());
 
       //this.addEventListener(this.events);
@@ -98,5 +101,11 @@ export class Countries extends BaseForm
 		}
 
 		return(true);
+	}
+
+	/** Sorting, referenced by labels in html */
+	async sort(block, column)
+	{
+		return(this.sorter.toggle(block,column).sort(block));
 	}
 }
