@@ -5,23 +5,23 @@ export const page =
   <table>
 	 <thead>
 		<tr>
-		  <th></th>
+		  <th />
 		  <th>
-			 <label className="above" htmlFor="cc-cid-0-0" tabIndex="0" ff-onclick="this.sort(CountryDS,country_id)" draggable="true" ff-ondragstart="this.startFieldDragging()">Id</label>
+			 <label className="above" htmlFor="cc-cid-0-0" tabIndex={0} ff-onclick="this.sort(CountryDS,country_id)" draggable="true" ff-ondragstart="this.startFieldDragging()">Id</label>
 		  </th>
 		  <th>
-			 <label className="above" htmlFor="cc-cn-0-0" tabIndex="0" ff-onclick="this.sort(CountryDS,country_name)" draggable="true" ff-ondragstart="this.startFieldDragging()">Country Name</label>
+			 <label className="above" htmlFor="cc-cn-0-0" tabIndex={0} ff-onclick="this.sort(CountryDS,country_name)" draggable="true" ff-ondragstart="this.startFieldDragging()">Country Name</label>
 		  </th>
 		</tr>
 	 </thead>
 	 <tbody>
 		<tr foreach="row in 0..5" type="row-indicator" from="CountryDS" row="$row" className="row">
-		  <td type="row-indicator" from="CountryDS" row="$row" className="pointer"></td>
+		  <td type="row-indicator" from="CountryDS" row="$row" className="pointer" />
 		  <td>
-			 <input type="text" name="country_id" from="CountryDS" size="2" upper="true" id="cc-cid-0-$row" row="$row"/>
+			 <input type="text" name="country_id" from="CountryDS" size={2} upper="true" id="cc-cid-0-$row" row="$row" lov="countrylist"/>
 		  </td>
 		  <td>
-			 <input type="text" name="country_name" from="CountryDS" size="40" initcap="true" id="cc-cn-0-$row" row="$row"/>
+			 <input type="text" name="country_name" from="CountryDS" size={40} initcap="true" id="cc-cn-0-$row" row="$row" />
 		  </td>
 		</tr>
 	 </tbody>
@@ -37,7 +37,7 @@ export const page =
 		  </td>
 		  <td>:</td>
 		  <td>
-			 <input type="text" name="country_id" from="CountryDS" size="2" upper="true" id="cc-cid-1-0"/>
+			 <input type="text" name="country_id" from="CountryDS" size={2} upper="true" id="cc-cid-1-0" />
 		  </td>
 		</tr>
 		<tr>
@@ -46,7 +46,7 @@ export const page =
 		  </td>
 		  <td>:</td>
 		  <td>
-			 <input type="text" name="country_name" from="CountryDS" size="40" initcap="true" id="cc-cn-1-0"/>
+			 <input type="text" name="country_name" from="CountryDS" size={40} initcap="true" id="cc-cn-1-0" />
 		  </td>
 		</tr>
 	 </tbody>
@@ -63,7 +63,7 @@ export const page =
 			 </td>
 			 <td>:</td>
 			 <td>
-				<input type="text" name="country_id" from="CountryDS" size="2" upper="true" id="cc-cid-2-0" className="group0"/>
+				<input type="text" name="country_id" from="CountryDS" size={2} upper="true" id="cc-cid-2-0" className="group0" />
 			 </td>
 		  </tr>
 		  <tr>
@@ -72,7 +72,7 @@ export const page =
 			 </td>
 			 <td>:</td>
 			 <td>
-				<input type="text" name="country_name" from="CountryDS" size="40" initcap="true" id="cc-cn-2-0" className="group0"/>
+				<input type="text" name="country_name" from="CountryDS" size={40} initcap="true" id="cc-cn-2-0" className="group0" />
 			 </td>
 		  </tr>
 		</tbody>
