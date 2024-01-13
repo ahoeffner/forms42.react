@@ -6,6 +6,7 @@ import { FormsModule as BaseModule, InternalFormsConfig, ConnectionScope, Databa
 
 export class FormsModule extends BaseModule
 {
+	static whenloggedon = new Set();
    static DATABASE = new DatabaseConnection("http://localhost:9002");
 
    constructor()
@@ -41,10 +42,18 @@ export class FormsModule extends BaseModule
 	{
 		await FormsModule.DATABASE.connect("hr","hr");
 
-		setTimeout(() =>
+		if (FormsModule.onlogon)
 		{
-			FormsModule.getCurrentForm()?.showCurrentCountry();
-		},10);
+			FormsModule.onlogon.forEach((action) => action());
+			FormsModule.onlogon = null;
+		}
+	}
+
+
+	runWhenLoggedOn(object,func)
+	{
+		if (!FormsModule.onlogon) object[func]();
+		else FormsModule.onlogon.add(object[func]);
 	}
 
 

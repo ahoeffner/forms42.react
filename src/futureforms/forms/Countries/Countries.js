@@ -2,6 +2,7 @@ import { page } from "./CountriesHTML"
 
 import { BaseForm } from "../BaseForm";
 import { CountryDS } from "./CountriesDS";
+import { FormsModule } from "../../FormsModule";
 import { Equals, EventType, Messages, TableSorter } from "futureforms";
 
 const PARAM = "country";
@@ -19,6 +20,7 @@ export class Countries extends BaseForm
       this.setDataSource(COUNTRIES,new CountryDS());
 
       //this.addEventListener(this.events);
+      this.addEventListener(this.init,{type: EventType.PostViewInit});
       this.addEventListener(this.preQuery,{type: EventType.PreQuery});
       //this.addEventListener(this.setCreated,{type: EventType.OnFetch});
 		//this.addEventListener(this.allowInput,{type: EventType.OnNewRecord});
@@ -31,12 +33,12 @@ export class Countries extends BaseForm
 		this.parameters.get("react").someMethod("Hello");
 	}
 
-   async showCurrentCountry()
-   {
-		let country = this.parameters.get(PARAM);
-		if (country) await this.executeQuery();
-      return(true);
-   }
+	init()
+	{
+      let country = this.parameters.get(PARAM);
+		if (country) FormsModule.whenloggedon(this,this.executeQuery());
+		return(true);
+	}
 
    async preQuery()
    {
