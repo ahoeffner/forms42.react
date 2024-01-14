@@ -66,7 +66,7 @@ export class FormsModule extends BaseModule
 
 	handle(msg, _level)
 	{
-		//alert(msg.message);
+		alert(msg.message);
 		console.log(msg.message)
 		return(true);
 	}
