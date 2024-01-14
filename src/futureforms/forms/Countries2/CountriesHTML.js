@@ -2,6 +2,7 @@ export const page =
 <fieldset className="container">
 	<fieldset className="section left">
 	<legend>multirow</legend>
+	<button style={{marginLeft: "75px", marginTop: "16px"}} type="button" ff-onclick="this.queryAll()">Query</button>
 	<table>
 		<thead>
 			<tr>

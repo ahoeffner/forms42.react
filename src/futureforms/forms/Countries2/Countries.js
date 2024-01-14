@@ -25,6 +25,12 @@ export class Countries extends BaseForm
       return(true);
    }
 
+	async queryAll()
+	{
+		await this.executeQuery(SOURCE);
+		return(true);
+	}
+
 	/** Sorting, referenced by labels in html */
 	async sort(block, column)
 	{

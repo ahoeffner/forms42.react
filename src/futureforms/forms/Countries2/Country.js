@@ -4,6 +4,7 @@ import { EventType, FormsModule } from "futureforms";
 
 const FORM = "countries";
 const PARENT = "component";
+const SECTION = "countryds";
 
 export class Country extends Component
 {
@@ -22,11 +23,17 @@ export class Country extends Component
 		console.log(EventType[event.type]);
    }
 
+   executeQuery()
+   {
+      this.fform.executeQuery(SECTION);
+   }
+
    render()
    {
       return(
          <>
             <form name={FORM}></form>
+            <button style={{marginLeft: "100px", marginTop: "16px"}} onClick={() => this.executeQuery()}>Query</button>
          </>
       );
    }
