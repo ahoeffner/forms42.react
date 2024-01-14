@@ -1,5 +1,5 @@
 import { AppMessages } from "./AppMessages";
-import { Countries } from "./forms/Countries/Countries";
+import { Countries } from "./forms/Countries1/Countries";
 import { Countries as CountryList } from "./listofvalues/Countries";
 import { FormsModule as BaseModule, InternalFormsConfig, ConnectionScope, DatabaseConnection, FlushStrategy, FormProperties, KeyMap, Messages } from "futureforms";
 
@@ -44,16 +44,23 @@ export class FormsModule extends BaseModule
 
 		if (FormsModule.onlogon)
 		{
-			FormsModule.onlogon.forEach((action) => action());
+			FormsModule.onlogon.forEach((exec) =>
+			{
+				let claz = exec[0];
+				let func = exec[1];
+
+				claz[func]();
+			})
+
 			FormsModule.onlogon = null;
 		}
 	}
 
 
-	runWhenLoggedOn(object,func)
+	static runWhenLoggedOn(object,func)
 	{
 		if (!FormsModule.onlogon) object[func]();
-		else FormsModule.onlogon.add(object[func]);
+		else FormsModule.onlogon.add([object,func]);
 	}
 
 

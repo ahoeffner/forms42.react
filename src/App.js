@@ -1,10 +1,10 @@
 import './App.css';
-import { FutureForm } from './FutureForm';
+import { Country } from './futureforms/forms/Countries4/Country';
 
 function App() {
   return (
     <div>
-      <FutureForm form="countries" country="DK"></FutureForm>
+      <Country country="SE"/>
     </div>
   );
 }
